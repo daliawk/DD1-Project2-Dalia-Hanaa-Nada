@@ -1,0 +1,28 @@
+module Multiplier(
+	input clk,
+	input [7:0] A,
+	input [7:0] B,
+	output [15:0] P
+);
+	
+	wire A_comp, B_comp;
+	
+	Complement ac (A, A[7], A_comp);
+	Complement bc (B, B[7], B_comp);
+	
+	reg [15:0] P_temp= 0;
+	
+	always@(posedge clk) begin
+		while(B_comp != 0) begin
+			if(b[0] == 1) begin
+				P_temp = P_temp + A_comp;
+			end
+			//SHR
+			//SHL
+		end
+	end
+	
+	Complement pc(P_temp, A[7]^B[7], P);
+	
+
+endmodule
