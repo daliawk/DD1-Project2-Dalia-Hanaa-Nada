@@ -52,7 +52,13 @@ output reg [15:0] P_temp=0
 
 end
 
+//assign en= !EA;
+//Complement pc(P_temp, A[7]^B[7], P);
+assign P= (~EP | rst)? 0 :
+           (A[7]^B[7])? ~P_temp + 8'b00000001: P_temp; 
 
+
+endmodule
 
 
 module Multiplier_Sim(
