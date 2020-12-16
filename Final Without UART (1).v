@@ -1,15 +1,15 @@
 module Multiplier(
     input clk, 
     input RxD,
-input en,
-input rst,
-input div0,
+//input en,
+//input rst,
+//input div0,
 input [7:0] A,
 input [7:0] B,
 output reg [6:0] sevenSegment,
 output reg [3:0] enable
 );
- 
+ wire en, rst, div0;
  reg EA=0;
  
  reg EP=0;
